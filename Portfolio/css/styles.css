@@ -6,7 +6,8 @@
 
 /* CSS Reset: removes default browser margin, padding, and borders */
 body, header, nav, main, section, footer,
-h1, h2, h3, p, ul, li, img, iframe, div, a {
+h1, h2, h3, p, ul, li, img, iframe, div, a,
+figure, figcaption {
   margin: 0;
   padding: 0;
   border: 0;
@@ -20,7 +21,7 @@ img {
 
 /* ===== HEADER STYLES BEGIN ===== */
 header {
-  background-color: #0b3d91; /* deep blue */
+  background-color: #4B0082;  /* deep purple */
   color: #ffffff;
   text-align: center;
   padding: 20px;
@@ -36,11 +37,24 @@ header {
   border: 3px solid #ffffff;
 }
 
+figure {
+  text-align: center;
+  margin: 10px 0;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
 /* ===== HEADER STYLES END ===== */
 
 
 /* ===== NAVIGATION STYLES BEGIN ===== */
-/* ===== NAVIGATION LAYOUT FIX ===== */
+nav {
+  background-color: #000000;  /* black bar */
+}
 nav ul {
   display: flex;
   flex-direction: row;
@@ -54,21 +68,19 @@ nav li {
   display: inline;   /* overrides any block rule */
   margin: 0 15px;
 }
-/* ===== END FIX ===== */
 
 
 nav a {
-  color: #ffffff;
+  color: #D4AF37;             /* gold text */
   text-decoration: none;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #ffffff;             /* white on hover */
 }
 /* ===== NAVIGATION STYLES END ===== */
-
 
 
 
@@ -83,7 +95,7 @@ main {
 
 /* ID selector example */
 #contact-info {
-  background-color: #e6f0ff; /* soft light blue */
+  background-color: #ffffff;
   padding: 15px;
   border-radius: 6px;
 }
@@ -93,16 +105,127 @@ section {
 }
 
 h2 {
+  color: #4B0082;   /* gold headings */
   margin-bottom: 10px;
-  color: #0b3d91; /* blue headings */
 }
 /* ===== MAIN CONTENT STYLES END ===== */
 
+/* ===== EXPERIENCE PAGE STYLES BEGIN ===== */
+
+/* Card-like sections for clean portfolio layout */
+.content-card {
+  background-color: #ffffff;
+  padding: 16px;
+  margin-bottom: 18px;
+  border: 1px solid #4B0082;
+  border-radius: 8px;
+}
+
+/* Slightly emphasized paragraph text */
+.lead-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Clean list style for certifications, skills, etc. */
+.list-clean {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-clean li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.list-clean li:last-child {
+  border-bottom: none;
+}
+
+/* Work history timeline style */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+.item-title {
+  margin-bottom: 4px;
+  font-size: 1.1rem;
+  color: #0b3d91;
+}
+
+.item-meta {
+  font-size: 0.95rem;
+  color: #333333;
+  margin-bottom: 6px;
+}
+
+.item-desc {
+  line-height: 1.6;
+}
+
+/* Simple “badge” for achievements like Eagle Scout */
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 2px solid #D4AF37;
+  border-radius: 999px;
+  font-weight: bold;
+  color: #D4AF37;
+  background-color: #4B0082;
+}
+
+/* ===== EXPERIENCE PAGE STYLES END ===== */
+
+/* ===== GRID LAYOUT STYLES BEGIN ===== */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;  /* mobile default */
+  gap: 18px;
+}
+
+/* Two columns on wider screens */
+@media (min-width: 800px) {
+  .grid-layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  /* Make the first section span both columns (great for an intro section) */
+  .grid-layout section:first-of-type {
+    grid-column: 1 / -1;
+  }
+}
+/* ===== GRID LAYOUT STYLES END ===== */
+
+
+/* ===== SHADOW STYLES BEGIN ===== */
+/* Box shadow requirement: gives cards a clean raised look */
+.content-card {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional text shadow (keep if you want it) */
+header h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+}
+/* ===== SHADOW STYLES END ===== */
 
 /* ===== FOOTER STYLES BEGIN ===== */
 footer {
   background-color: #000000;
-  color: #ffffff;
+  color: #D4AF37;   /* gold text */
   text-align: center;
   padding: 15px;
   margin-top: 30px;
@@ -115,5 +238,3 @@ a {
   color: #0b3d91;
 }
 /* ===== FOOTER STYLES END ===== */
-
-
